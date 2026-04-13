@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Category Management</h2>
+  <button routerLink="/categories/new" style="margin-bottom: 1rem;">Add New Category</button>
+
+  <table style="width: 100%; border-collapse: collapse;" border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (category of categories(); track category.id) {
+        <tr>
+          <td>{{ category.id }}</td>
+          <td>{{ category.name }}</td>
+          <td>{{ category.description }}</td>
+          <td>
+            <button [routerLink]="['/categories/edit', category.id]">Edit</button>
+            <button (click)="deleteCategory(category.id)">Delete</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4" style="text-align: center;">No categories found.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

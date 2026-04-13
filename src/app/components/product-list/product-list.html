@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Product Management</h2>
+  <button routerLink="/products/new" class="btn btn-primary">Add New Product</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products(); track product.id) {
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }} MAD</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.category.name }}</td>
+          <td>
+            <button [routerLink]="['/products/edit', product.id]">Edit</button>
+            <button (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="6" style="text-align: center;">No products found.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

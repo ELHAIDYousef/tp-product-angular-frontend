@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>{{ isEditMode() ? 'Edit' : 'Add' }} Category</h2>
+  
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+    <div style="margin-bottom: 1rem;">
+      <label for="name" style="display: block;">Name</label>
+      <input id="name" type="text" formControlName="name" style="width: 100%; padding: 0.5rem;">
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+      <label for="description" style="display: block;">Description</label>
+      <textarea id="description" formControlName="description" style="width: 100%; padding: 0.5rem;"></textarea>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="categoryForm.invalid">Save</button>
+      <button type="button" (click)="cancel()" style="margin-left: 0.5rem;">Cancel</button>
+    </div>
+  </form>
+</div>

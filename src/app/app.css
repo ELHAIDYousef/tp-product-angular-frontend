@@ -1,0 +1,36 @@
+/* Subtle shadow to separate navbar from content */
+.custom-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Creative Animated Underline Hooking into Bootstrap's .nav-link */
+.creative-link {
+  position: relative;
+  font-weight: 500;
+  color: #4b5563 !important; /* Overrides default Bootstrap link color */
+  transition: color 0.3s ease;
+}
+
+/* Hover and Angular's routerLinkActive State */
+.creative-link:hover,
+.creative-link.active {
+  color: #0d6efd !important; /* Bootstrap primary blue */
+}
+
+/* The Underline Element */
+.creative-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0px; 
+  left: 0;
+  background-color: #0d6efd;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Trigger the animation on hover or when active */
+.creative-link:hover::after,
+.creative-link.active::after {
+  width: 100%;
+}
