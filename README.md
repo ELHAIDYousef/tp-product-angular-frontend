@@ -1,59 +1,50 @@
-# TpProductFrontend
+# Système de Gestion d'Inventaire - Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+## Description
+Ce projet est une interface utilisateur moderne développée avec **Angular 17+** (mode Standalone) pour la gestion d'un catalogue de produits et de catégories. Il communique de manière asynchrone avec une API Spring Boot pour offrir une expérience utilisateur fluide et réactive (SPA - Single Page Application).
 
-## Development server
+## Captures d'écran
+*Insérez vos captures ici pour illustrer votre travail au professeur.*
 
-To start a local development server, run:
+### 1. Dashboard et Liste des Produits
+![alt text](image.png)
+*Aperçu du tableau dynamique avec gestion des états (Checked/Unchecked) et suppression en temps réel.*
 
-```bash
-ng serve
-```
+### 2. Formulaire d'Ajout (Reactive Forms)
+![alt text](image-1.png)
+*Interface de création avec validation des champs et sélection de catégorie liée au backend.*
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Architecture Technique
+L'application suit une architecture modulaire et découplée:
+* **Composants Standalone** : Utilisation des nouvelles fonctionnalités d'Angular pour une structure plus légère sans NgModules.
+* **Service Layer** : Centralisation des appels HTTP via `HttpClient` et gestion des flux de données avec **RxJS**.
+* **Control Flow** : Utilisation de la nouvelle syntaxe `@for` et `@if` pour un rendu performant.
+* **Modèles Type-Safe** : Interfaces TypeScript rigoureuses pour garantir l'intégrité des données backend.
 
-## Code scaffolding
+## Stack Technique
+* **Angular 17+** : Framework principal..
+* **Bootstrap 5 & Icons** : Pour un design responsive et professionnel.
+* **RxJS** : Programmation réactive pour les appels API.
+* **Zone.js** : Gestion de la détection de changement.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Fonctionnalités Clés
+1. **Affichage Dynamique** : Tableau triable affichant les produits et leurs catégories respectives.
+2. **Gestion d'État** : Mise à jour instantanée de l'état "Checked" via un toggle asynchrone.
+3. **Formulaire Réactif** : Validation avancée et gestion des erreurs de saisie.
+4. **Routage SPA** : Navigation entre les vues sans rechargement de page via `AppRoutingModule`.
 
-```bash
-ng generate component component-name
-```
+## Installation et Démarrage
+1. **Prérequis** : Node.js (v18+) et Angular CLI installés.
+2. **Installation des dépendances** :
+   ```bash
+   npm install
+   ```
+3. **Lancement du serveur** : 
+    ```bash
+    ng serve
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+4. **Accès** : L'application est disponible sur `http://localhost:4200`.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Développé par : ELHAID Yousef
+## Encadré par : Pr. Mohamed Youssfi (ENSET Mohammedia)

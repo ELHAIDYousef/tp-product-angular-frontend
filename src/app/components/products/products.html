@@ -1,0 +1,39 @@
+<div class="p-3">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">Product Inventory</div>
+    <div class="card-body">
+      <table class="table table-hover mt-2">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Quantity</th><th>Checked</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (p of products; track p.id) {
+            <tr>
+              <td>{{p.id}}</td>
+              <td>{{p.name}}</td>
+              <td>
+                <span class="badge bg-info text-dark">
+                  {{p.category ? p.category.name : 'N/A'}}
+                </span>
+              </td>
+              <td>{{p.price | currency}}</td>
+              <td>{{p.quantity}}</td>
+              <td>
+                <button (click)="handleCheckProduct(p)" class="btn btn-link">
+                  <i [class]="p.checked ? 'bi bi-check-circle-fill text-success' : 'bi bi-circle text-muted'"></i>
+                </button>
+              </td>
+              <td>
+                <button (click)="handleDeleteProduct(p)" class="btn btn-outline-danger btn-sm">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
